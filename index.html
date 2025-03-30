@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="header">
+                <h1>My Portfolio</h1>
+                <div class="menu-toggle"><button>☰</button></div>
+            </div>
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#" id="resumeBtn">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h2>Hi, I'm Surjendu Dolai
+            <p>Full stack Developer | Programmer</p>
+        </h2>
+
+        <div class="profile">
+            <img src="pic.jpg" alt="Profile Picture">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Who am i ?</h2>
+        <p>"I am a passionate Full-stack web developer with experience in HTML, CSS, JavaScript, PHP, and MySQL. I specialize in
+            creating dynamic, responsive websites and web applications with a focus on user-friendly design and
+            functionality.Additionally, I have knowledge about of backend development, database management, and
+            deploying web applications. I'm always eager to learn new technologies and improve my skills to stay updated
+            with industry trends."</p>
+    </section>
+
+    <section class="resume" id="resume">
+        <div class="resume-overlay" id="resumeOverlay">
+            <div class="resume-popup">
+                <span class="close-btn" id="closeResume">&times;</span>
+                <img src="resume.jpg" alt="My Resume" id="resumeImg">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card"
+                onclick="showPopup('project1.jpg', 'Gym & Yoga Center', 'This Gym & Yoga Center is a platform that combines fitness and wellness services, allowing users to manage both gym workouts and yoga sessions in one place.This is made for the personal use purpose.')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="project1.jpg" alt="Project 1">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Gym & Yoga Center</h3>
+                        <p>This Gym & Yoga Center is a platform that combines fitness and wellness services, allowing
+                            users to manage both gym workouts and yoga sessions in one place.This is made for the
+                            personal
+                            use purpose.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card"
+                onclick="showPopup('project2.jpg', 'Library Management System', 'This Library Management System website is an online platform designed to manage and organize library resources efficiently.This is an user-friendly and fully responsive.')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="project2.jpg" alt="Project 2">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Library Management System</h3>
+                        <p>This Library Management System website is an online platform designed to manage and organize
+                            library resources efficiently.This is an user-friendly and fully responsive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card"
+                onclick="showPopup('project3.jpg', 'Car showroom website', 'This car Showroom Website is an online platform designed to showcase a collection of cars, provide detailed specifications, and facilitate customer inquiries or purchases.')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="project3.jpg" alt="Project 3">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Car showroom website</h3>
+                        <p>This car Showroom Website is an online platform designed to showcase a collection of cars,
+                            provide detailed specifications, and facilitate customer inquiries or purchases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup-overlay" onclick="closePopup()">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img id="popup-img" src="" alt="Project Image">
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+        </div>
+    </div>
+
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Surjendu Dolai. All rights reserved.</p>
+    </footer>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

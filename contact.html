@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <p>I'd love to hear from you! Fill out the form below and I'll get back to you as soon as possible.</p>
+
+        <form id="contactForm">
+            <div class="input-group">
+                <input type="text" id="name" name="name">
+                <label>Name</label>
+                <small class="error" id="nameError"></small>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email">
+                <label>Email</label>
+                <small class="error" id="emailError"></small>
+            </div>
+            <div class="input-group">
+                <textarea id="message" name="message"></textarea>
+                <label>Message</label>
+                <small class="error" id="messageError"></small>
+            </div>
+            <button type="submit" id="submit">Send Message</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1E5pyexRhh/" class="icon" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/@sdbro3550?si=o3_rPOWG6McYznVd" class="icon" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/dolaisurjendu?igsh=MW9nYnozNzZrbXhtZw==" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+
+            // Get form values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            // Get error fields
+            let nameError = document.getElementById("nameError");
+            let emailError = document.getElementById("emailError");
+            let messageError = document.getElementById("messageError");
+
+            // Reset errors
+            nameError.innerText = "";
+            emailError.innerText = "";
+            messageError.innerText = "";
+
+            // Validate name
+            if (name === "") {
+                nameError.innerText = "Name is required.";
+                isValid = false;
+            }
+
+            // Validate email
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                emailError.innerText = "Email is required.";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                emailError.innerText = "Enter a valid email address.";
+                isValid = false;
+            }
+
+            // Validate message
+            if (message === "") {
+                messageError.innerText = "Message is required.";
+                isValid = false;
+            } else if (message.length < 10) {
+                messageError.innerText = "Message must be at least 10 characters.";
+                isValid = false;
+            }
+
+            // If all fields are valid, submit form
+            if (isValid) {
+                alert("Your message has been sent successfully! 🎉");
+                this.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
